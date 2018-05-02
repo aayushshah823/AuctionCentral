@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * 
+ * Unit test for acceptance test 5A.
  */
 
 /**
