@@ -1,4 +1,3 @@
-import java.awt.List;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,16 +12,20 @@ public class Bidder {
 	
 	public static final int MIN_BIDS_PER_ITEM = 0;
 	public static final int MAX_BIDS_PER_ITEM = 4;
+	
+	public static final int MIN_AMOUNT_BID_PER_ITEM = 500;
 
 	//Private fields
 	private ArrayList<Auction> myBids;
 	private int myTotalBids;
 	private Map<Auction, Item> myAuctions;	
+	private int myBid;
 	
 	public Bidder() {
 		myBids = new ArrayList<Auction>();
 		myTotalBids = 0;
 		myAuctions = new HashMap<Auction, Item>();
+		myBid = 0;
 	}
 	
 //	Bid(double): void
@@ -63,6 +66,10 @@ public class Bidder {
 	
 	public ArrayList<Auction> getAllAuctions() {
 		return null;
+	}
+	
+	public int getBidAmountPerItem(Item theItem) {
+		return myBid;
 	}
 
 }
