@@ -19,7 +19,7 @@ public class Bidder {
 	private ArrayList<Auction> myBids;
 	private int myTotalBids;
 	private Map<Auction, Item> myAuctions;	
-	private int myBid;
+	private static int myBid;
 	
 	public Bidder() {
 		myBids = new ArrayList<Auction>();
@@ -68,7 +68,7 @@ public class Bidder {
 		return null;
 	}
 	
-	public int getBidAmountPerItem(Item theItem) {
+	public static int getBidAmountPerItem(Item theItem) {
 		return myBid;
 	}
 
