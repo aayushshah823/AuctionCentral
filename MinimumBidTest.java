@@ -8,7 +8,7 @@ import org.junit.Test;
  */
 
 /**
- * @author aayushshah
+ * @author Aayush, Allen, Raisa, Jake, Ben
  *
  */
 public class MinimumBidTest {
