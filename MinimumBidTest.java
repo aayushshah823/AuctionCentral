@@ -4,11 +4,19 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
+<<<<<<< HEAD
  * 
  */
 
 /**
  * @author aayushshah
+=======
+ * Unit test for acceptance test 5A.
+ */
+
+/**
+ * @author Aayush, Allen, Raisa, Jake, Ben
+>>>>>>> 42e64a16359c4ffea77506ea724a533e2a8b8ddc
  *
  */
 public class MinimumBidTest {
