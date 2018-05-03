@@ -15,10 +15,16 @@ public class BidderTest {
 	private Item anItem;
 	private double lessThanMaxBids;
 	private double moreThanMaxBids;
+	private Bidder bidderWithFewBidsOnItems;
+	private Bidder bidderWithTooManyBidsOnItems;
+	private static double validBid = 50.00;
+
 	
 	@Before
 	public void setUp() throws Exception {
 		aBidder = new Bidder();
+		bidderWithFewBidsOnItems = new Bidder();
+		bidderWithTooManyBidsOnItems = new Bidder();
 		anItem = new Item();
 		lessThanMaxBids = 3;
 		moreThanMaxBids = 5;
@@ -34,5 +40,13 @@ public class BidderTest {
 		assertFalse(moreThanMaxBids < Bidder.MAX_BIDS_PER_ITEM);
 	}
 
-
+	@Test
+	public void makeBid_OneLessThanMaxNumberOfItems_true() {
+		assertTrue(bidderWithRoomToMakeBids(validBid, anItem));
+	}
+	
+	@Test
+	public void makeBid_BidderAtMaxNumberOfItem_false() {
+		assertFalse(bidderWithTooManyBidsOnItems.makeBid(validBid, anItem));
+	}
 }

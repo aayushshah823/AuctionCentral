@@ -12,8 +12,8 @@ public class Bidder {
 	
 	public static final int MIN_BIDS_PER_ITEM = 0;
 	public static final int MAX_BIDS_PER_ITEM = 4;
-	
 	public static final int MIN_AMOUNT_BID_PER_ITEM = 500;
+	public static final int MAX_BIDS_ALLOWED_PER_BIDDER = 10;
 
 	//Private fields
 	private ArrayList<Auction> myBids;
@@ -37,7 +37,11 @@ public class Bidder {
 //	getAllAuctions(): List
 	
 	public void makeBid(double bid, Item theItem) {
-		
+		if (isBidValid) {}
+	}
+	
+	public boolean isBidValid() {
+		return myTotalBids < MAX_BIDS_ALLOWED_PER_BIDDER;
 	}
 	
 	public ArrayList<Auction> getAuctionsWithBid(){
