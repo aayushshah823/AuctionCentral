@@ -10,6 +10,9 @@ import java.util.Map;
  */
 public class Bidder {
 	
+	/** Constant for minimum about of bid. */
+	public static final int MIN_AMOUNT_BID_PER_ITEM = 500;
+	
 	public static final int MIN_BIDS_PER_ITEM = 0;
 	public static final int MAX_BIDS_PER_ITEM = 4;
 	public static final int MIN_AMOUNT_BID_PER_ITEM = 500;
@@ -19,7 +22,15 @@ public class Bidder {
 	private ArrayList<Auction> myBids;
 	private int myTotalBids;
 	private Map<Auction, Item> myAuctions;	
+	
+	/* This was already there. Not sure if we need this
+	   or not as bid amount is going to be double.
+	
 	private static int myBid;
+	*/
+	
+	// Added by aayush
+	private double myBid;
 	
 	public Bidder() {
 		myBids = new ArrayList<Auction>();
@@ -74,6 +85,31 @@ public class Bidder {
 	
 	public static int getBidAmountPerItem(Item theItem) {
 		return myBid;
+	}
+	
+	/**
+	 * Gets the bid.
+	 * @return The bid of user.
+	 */
+	public double getMyBid() {
+		return myBid;
+	}
+	
+	/**
+	 * Sets the bid.
+	 * @param myBid The bid passed by user.
+	 */
+	public void setMyBid(double myBid) {
+		this.myBid = myBid;
+	}
+		
+	/**
+	 * Checks if bid is valid or not.
+	 * @param myBid The bid passed by user.
+	 * @return True if bid is valid, false otherwise.
+	 */
+	public boolean isBidAmount(double myBid) {
+		return myBid > MIN_AMOUNT_BID_PER_ITEM;
 	}
 
 }
