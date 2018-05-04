@@ -15,11 +15,9 @@ public class Bidder {
 	
 	public static final int MIN_BIDS_PER_ITEM = 0;
 	public static final int MAX_BIDS_PER_ITEM = 4;
-	public static final int MIN_AMOUNT_BID_PER_ITEM = 500;
 	public static final int MAX_BIDS_ALLOWED_PER_BIDDER = 10;
 
 	//Private fields
-	private ArrayList<Auction> myBids;
 	private int myTotalBids;
 	private Map<Auction, Item> myAuctions;	
 	
@@ -33,7 +31,6 @@ public class Bidder {
 	private double myBid;
 	
 	public Bidder() {
-		myBids = new ArrayList<Auction>();
 		myTotalBids = 0;
 		myAuctions = new HashMap<Auction, Item>();
 		myBid = 0;
@@ -48,7 +45,7 @@ public class Bidder {
 //	getAllAuctions(): List
 	
 	public void makeBid(double bid, Item theItem) {
-		if (isBidValid) {}
+		if (isBidValid()) {}
 	}
 	
 	public boolean isBidValid() {
@@ -82,11 +79,7 @@ public class Bidder {
 	public ArrayList<Auction> getAllAuctions() {
 		return null;
 	}
-	
-	public static int getBidAmountPerItem(Item theItem) {
-		return myBid;
-	}
-	
+
 	/**
 	 * Gets the bid.
 	 * @return The bid of user.
